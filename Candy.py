@@ -8,7 +8,7 @@ class Solution:
         for i in range(length - 1, 0, -1):
             if ratings[i] < ratings[i - 1]:
                 candies[i - 1] = max(candies[i - 1], candies[i]+1)
-        return candies
+        return sum(candies)
 
 l = [1, 3, 4, 5, 2]
 a = Solution()
