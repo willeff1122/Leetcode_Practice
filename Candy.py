@@ -10,7 +10,7 @@ class Solution:
                 candies[i - 1] = max(candies[i - 1], candies[i]+1)
         return sum(candies)
 
-l = [1, 3, 4, 5, 2]
+l = [1, 0, 2]
 a = Solution()
 print(a.candy(l))
 
