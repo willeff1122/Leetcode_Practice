@@ -12,4 +12,4 @@ class Solution:
             return False
         else:
             return (p.val == q.val and self.isSameTree(p.left, q.left) and 
-            self.isSameTree(p.right, q.right)
+            self.isSameTree(p.right, q.right))
