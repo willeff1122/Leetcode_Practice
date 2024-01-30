@@ -15,3 +15,22 @@ class Solution:
                     end += 1
                     start = end
         return result
+
+#Second Solution
+    
+    
+# class Solution:
+#     def summaryRanges(self, nums: List[int]) -> List[str]:
+#         result = []
+#         idx = 0
+#         while idx < len(nums):
+#             original = nums[idx]
+#             while (idx + 1) < len(nums) and nums[idx] + 1 == nums[idx+1]:
+#                 idx += 1
+#             after = nums[idx]
+#             if original == after:
+#                 result.append(str(original))
+#             else:
+#                 result.append(str(original) + '->' + str(after))
+#             idx += 1
+#         return result
