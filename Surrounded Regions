@@ -1,0 +1,30 @@
+class Solution:
+    def solve(self, board: List[List[str]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+        """
+        if not board:
+            return
+        o = 'O'
+        r, c = len(board), len(board[0])
+        def dfs(a, b):
+            board[a][b] = '#'
+            for di, dj in (0, 1), (0, -1), (1, 0), (-1, 0):
+                ii, jj = (a + di, b + dj)
+                if 0 <= ii < r and 0 <= jj < c and board[ii][jj] == o:
+                    dfs(ii, jj)
+        
+        for i in range(r):
+            if board[i][0] == o: dfs(i, 0)
+            if board[i][c-1] == o: dfs(i, c-1)
+        for j in range(c):
+            if board[0][j] == o: dfs(0, j)
+            if board[r-1][j] == o: dfs(r-1, j)
+        
+        for k in range(r):
+            for l in range(c):
+                if board[k][l] == o:
+                    board[k][l] = 'X'
+                elif board[k][l] == '#':
+                    board[k][l] = 'O'
+
