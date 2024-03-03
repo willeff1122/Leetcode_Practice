@@ -10,9 +10,6 @@ class Solution:
                 bot = mid - 1
             else:
                 break
-        print(ROW)
-        print(COL)
-        print(mid)
         if not top <= bot:
             return False
         l, r = 0, COL - 1
